@@ -138,6 +138,7 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
   width: 100%;
   height: 80vh;
   background-color: $text-black;
+  opacity: 0;
  }
 }
 
@@ -165,6 +166,7 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
  position: relative;
  padding: 40px 32px;
  max-width: 500px;
+ overflow: hidden;
  h1 {
   margin-bottom: 32px;
  }
@@ -184,6 +186,10 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
  }
 }
 
+.main-hero__cta-content {
+ position: relative;
+}
+
 .main-hero__cta-link {
  text-decoration: underline;
 }
@@ -197,9 +203,92 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
   width: 50%;
   height: 100%;
   background-color: #1cbbb4;
+  opacity: 0.7;
  }
  .main-hero__cta-button.main-hero__cta-button--dislike {
   background-color: #ffad1d;
+ }
+}
+
+.main-hero__footer {
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ display: flex;
+ align-items: center;
+ width: 100vw;
+ height: 50px;
+ transform: translateX(-50%);
+}
+
+.main-hero__footer__count-label {
+ position: relative;
+ display: inline-flex;
+ align-items: center;
+ justify-content: flex-end;
+ height: 100%;
+ padding-right: 10px;
+ text-align: right;
+ flex: 1;
+ &::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: calc(100% + 10px);
+  height: 100%;
+  background-color: $text-black;
+  opacity: 0.3;
+ }
+ p {
+  position: relative;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+ }
+}
+
+.main-hero__footer__count {
+ position: relative;
+ display: inline-flex;
+ align-items: center;
+ height: 100%;
+ padding-left: 20px;
+ text-align: left;
+ flex: 2;
+ overflow: hidden;
+ &::before, &::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -5px;
+  width: calc(100% + 20px);
+  height: 50%;
+  background-color: #fff;
+ }
+ &::before {
+  top: 0;
+  -webkit-transform: skew(50deg);
+  -moz-transform: skew(50deg);
+  -o-transform: skew(50deg);
+  -ms-transform: skew(50deg);
+  transform: skew(50deg);
+ }
+ &::after {
+  bottom: 0;
+  -webkit-transform: skew(-60deg);
+  -moz-transform: skew(-50deg);
+  -o-transform: skew(-50deg);
+  -ms-transform: skew(-50deg);
+  transform: skew(-50deg);
+ }
+ p {
+  position: relative;
+  font-weight: 300;
+  font-size: 36px;
+  color: #464646;
+  z-index: 2;
  }
 }
 
