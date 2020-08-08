@@ -1,0 +1,43 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 24 / 21;
+}
+
+h1,
+.h1 {
+  font-weight: 700;
+  font-size: 60px;
+  color: #fff;
+}
+
+h2,
+.h2 {
+  font-weight: 300;
+  font-size: 40px;
+  color: #fff;
+}
+
+h1.heading--dark,
+h2.heading--dark,
+h3.heading--dark,
+.h1.heading--dark,
+.h2.heading--dark,
+.h3.heading--dark {
+  color: $text-black;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+p.p--small {
+  font-size: 12px;
+}
+
+h3,
+.h3 {
+  font-size: 30px;
+  line-height: 30 / 24;
+}

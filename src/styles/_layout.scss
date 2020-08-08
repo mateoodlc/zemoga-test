@@ -1,0 +1,49 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ background-color: black;
+}
+
+
+.max-bound {
+ margin: 0 auto;
+ width: 100vw;
+ height: 100vh;
+ background-color: white;
+}
+
+.outer-pad {
+ padding: 0 16px;
+}
+
+.component-spacer {
+ margin-bottom: 32px;
+ &:last-of-type {
+  margin-bottom: 0;
+ }
+}
+
+@media screen and (min-width: 410px) {
+ .outer-pad {
+  padding: 0 24px;
+ }
+}
+
+@media screen and (min-width: 800px) {
+ .outer-pad {
+  padding: 0 32px;
+ }
+}
+
+@media screen and (min-width: 1100px) {
+ .max-bound {
+  max-width: 1025px;
+ }
+ .outer-pad {
+  padding: 0 0;
+ }
+}
