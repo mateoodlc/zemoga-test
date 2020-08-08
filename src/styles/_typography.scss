@@ -1,7 +1,7 @@
 body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
-  line-height: 24 / 21;
+  line-height: (24 / 21);
 }
 
 h1,
@@ -41,5 +41,5 @@ p.p--small {
 h3,
 .h3 {
   font-size: 30px;
-  line-height: 30 / 24;
+  line-height: (30 / 24);
 }
