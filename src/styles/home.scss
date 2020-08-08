@@ -116,7 +116,7 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
  /* padding-top: 188px;
  padding-bottom: 64px; */
  transform: translateX(-50%);
- img {
+ img.main-hero__background-image {
   position: absolute;
   object-fit: cover;
   top: 0;
@@ -203,7 +203,7 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
   position: relative;
   width: 50%;
   height: 100%;
-  svg {
+  img {
    position: relative;
   }
   &::before {
@@ -222,7 +222,7 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
   &::before {
    background-color: #ffad1d;
   }
-  svg {
+  img {
    transform: rotate(180deg);
   }
  }
