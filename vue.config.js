@@ -10,11 +10,8 @@ module.exports = {
   css: {
     requireModuleExtension: false,
     loaderOptions: {
-      sass: {
-        prependData: '@import "~@/styles/variables.sass"',
-      },
       scss: {
-        prependData: '@import "~@/styles/variables.scss"; @import "~@/styles/_typography.scss"; @import "~@/styles/_layout.scss"; @import "~@/styles/_base.scss";',
+        prependData: '@import "~@/styles/variables.scss"; @import "~@/styles/_typography.scss"; @import "~@/styles/_layout.scss"; @import "~@/styles/_base.scss"; @import "~@/styles/home.scss";',
       },
     },
   },
