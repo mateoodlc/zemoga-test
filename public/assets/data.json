@@ -1,0 +1,36 @@
+{
+  "votes": [
+   {
+     "id": 1,
+     "name": "Kanye West",
+     "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+     "likes": 1,
+     "dislikes": 3,
+     "imgSrc": "./assets/img/kanye.jpg" 
+   },
+   {
+    "id": 2,
+    "name": "Cristina Fernández de Kirchner",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    "likes": 1,
+    "dislikes": 3,
+    "imgSrc": "./assets/img/cristina.jpg"
+   },
+   {
+    "id": 3,
+    "name": "Mark Zuckerberg",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    "likes": 1,
+    "dislikes": 3,
+    "imgSrc": "./assets/img/mark.jpg"
+   },
+   {
+    "id": 4,
+    "name": "Malala Yousafzai",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    "likes": 1,
+    "dislikes": 3,
+    "imgSrc": "./assets/img/malala.jpg"
+   }
+  ]
+ }
