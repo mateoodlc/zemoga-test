@@ -18,7 +18,11 @@ export default class Fetch {
   }
 
   async updateDocument(collection, fetchBody) {
-    const response = await this.dataBase.collection(collection).doc(fetchBody.id).update(fetchBody);
-    return response;
+    try {
+      const response = await this.dataBase.collection(collection);
+      return response.doc(fetchBody.id).update(fetchBody);
+    } catch (error) {
+      return console.error(error);
+    }
   }
 }
