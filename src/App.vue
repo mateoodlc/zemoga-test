@@ -24,30 +24,28 @@
 
 <script>
 import VoteComponent from './components/VoteComponent/VoteComponent.vue';
+import Fetch from './Fetch';
 
 export default {
   name: 'App',
   data() {
     return {
       votesData: [],
+      fetch: new Fetch(),
     };
   },
   components: {
     VoteComponent,
   },
-  beforeMount() {
+  async mounted() {
     this.getData();
   },
   methods: {
     async getData() {
-      try {
-        const response = await fetch('./assets/data.json');
-        const data = await response.json();
-        console.log(data);
-        this.votesData = await data.votes;
-      } catch (error) {
-        console.log(error);
-      }
+      this.votesData = await this.fetch.getCollection('votes');
+    },
+    updateVotes(votesStatus) {
+      this.fetch.updateDocument('votes', votesStatus);
     },
   },
 };

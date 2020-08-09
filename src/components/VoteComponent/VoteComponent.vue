@@ -15,13 +15,13 @@
         <form v-if="!voted">
           <fieldset>
             <label class="container container--like">
-              <input type="radio" name="radio" value="liked" v-model="voteLiked">
+              <input type="radio" name="radio" value="liked" v-model="selectedVote">
               <img src="../../assets/img/like.svg" alt="">
               <span class="sr-only">Like</span>
               <span class="checkmark"></span>
             </label>
             <label class="container container--dislike">
-              <input type="radio" name="radio" value="disliked" v-model="voteLiked">
+              <input type="radio" name="radio" value="disliked" v-model="selectedVote">
               <img src="../../assets/img/like.svg" alt="">
               <span class="sr-only">Dislike</span>
               <span class="checkmark"></span>
@@ -29,7 +29,7 @@
           </fieldset>
           <button
           class="button"
-          @click.prevent="voteLiked !== '' ? updatePopularity() : ''">
+          @click.prevent="selectedVote !== '' ? updatePopularity() : ''">
             Vote Now
           </button>
         </form>
@@ -61,11 +61,11 @@ export default {
       voted: false,
       localLikes: this.$props.likes,
       localDislikes: this.$props.dislikes,
-      voteLiked: String,
+      selectedVote: String,
     };
   },
   props: {
-    id: Number,
+    id: String,
     name: String,
     description: String,
     likes: Number,
@@ -76,17 +76,26 @@ export default {
   },
   methods: {
     updatePopularity() {
-      const voteStatus = this.voteLiked === 'liked';
+      const voteStatus = this.selectedVote === 'liked';
       this.voted = true;
       if (voteStatus) {
         this.localLikes += 1;
       } else {
         this.localDislikes += 1;
       }
+      const votesParams = {
+        id: this.$props.id,
+        name: this.$props.name,
+        description: this.$props.description,
+        likes: this.localLikes,
+        dislikes: this.localDislikes,
+        imgSrc: this.$props.imgSrc,
+      };
+      this.$parent.updateVotes(votesParams);
     },
     voteAgain() {
       this.voted = false;
-      this.voteLiked = '';
+      this.selectedVote = '';
     },
   },
   computed: {
