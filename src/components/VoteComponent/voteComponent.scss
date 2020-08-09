@@ -115,12 +115,12 @@ h2.vote-module__name {
 
 
 .vote-module__content__footer {
+  margin-top: 20px;
  form {
   display: flex;
   align-items: center;
-  margin-top: 20px;
   fieldset {
-   border: none;
+    border: none;
   }
  }
 }
@@ -193,9 +193,11 @@ h2.vote-module__name {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
- background-color: transparent;
- border: 2px solid transparent;
+.container:hover, .container:focus {
+  input ~ .checkmark {
+    background-color: transparent;
+    border: 2px solid transparent;
+  }
 }
 
 /* When the radio button is checked, add a blue background */
@@ -205,7 +207,7 @@ h2.vote-module__name {
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+.checkmark::after {
  content: "";
  position: absolute;
  display: none;

@@ -11,7 +11,7 @@ button.button {
   font-weight: 400;
   cursor: pointer;
   transition: background-color .3s, color .3s;
-  &:hover {
+  &:hover, &:focus {
     background-color: #fff;
     color: $text-black;
   }
