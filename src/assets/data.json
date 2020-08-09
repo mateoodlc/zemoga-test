@@ -4,7 +4,7 @@
     "id": 1,
     "name": "Kanye West",
     "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    "likes": 1,
+    "likes": 6,
     "dislikes": 3,
     "imgSrc": "./assets/img/kanye.jpg" 
   },
