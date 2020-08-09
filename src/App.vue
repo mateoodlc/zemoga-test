@@ -24,6 +24,7 @@
 
 <script>
 import VoteComponent from './components/VoteComponent/VoteComponent.vue';
+import DatabaseConstants from './DatabaseConstants';
 import Fetch from './Fetch';
 
 export default {
@@ -42,10 +43,10 @@ export default {
   },
   methods: {
     async getData() {
-      this.votesData = await this.fetch.getCollection('votes');
+      this.votesData = await this.fetch.getCollection(DatabaseConstants.VOTES_COLLECTION);
     },
     updateVotes(votesStatus) {
-      this.fetch.updateDocument('votes', votesStatus);
+      this.fetch.updateDocument(DatabaseConstants.VOTES_COLLECTION, votesStatus);
     },
   },
 };

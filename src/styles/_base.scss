@@ -17,6 +17,11 @@ button.button {
   }
 }
 
+button.button.button--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
