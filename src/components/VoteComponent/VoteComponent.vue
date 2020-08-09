@@ -29,6 +29,7 @@
           </fieldset>
           <button
           class="button"
+          :class="{'button--disabled': selectedVote == ''}"
           @click.prevent="selectedVote !== '' ? updatePopularity() : ''">
             Vote Now
           </button>
@@ -43,10 +44,10 @@
       <span class="disliked" :style="{width: popularityComputed.dislikes + '%'}"></span>
       <div class="vote-module__measurement-like">
         <img src="../../assets/img/like.svg" alt="Like">
-        <p>{{Math.floor(popularityComputed.likes)+'%'}}</p>
+        <p>{{Math.round(popularityComputed.likes)+'%'}}</p>
       </div>
       <div class="vote-module__measurement-dislike">
-        <p>{{Math.floor(popularityComputed.dislikes)+'%'}}</p>
+        <p>{{Math.round(popularityComputed.dislikes)+'%'}}</p>
         <img src="../../assets/img/like.svg" alt="Like">
       </div>
     </div>
