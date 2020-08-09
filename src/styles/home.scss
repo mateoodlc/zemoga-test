@@ -136,9 +136,8 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80vh;
+  height: calc(100% - 80px);
   background-color: $text-black;
-  opacity: 0;
  }
 }
 
@@ -248,15 +247,26 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
  padding-right: 10px;
  text-align: right;
  flex: 1;
- &::before {
+ &::before, &::after {
   content: '';
   position: absolute;
   display: block;
+ }
+ &::before {
   top: 0;
   left: 0;
-  width: calc(100% + 10px);
+  width: calc(100%);
   height: 100%;
   background-color: $text-black;
+  opacity: 0.3;
+ }
+ &::after {
+  width: 0; 
+  height: 0; 
+  right: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid $text-black;
   opacity: 0.3;
  }
  p {
@@ -284,6 +294,7 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
   width: calc(100% + 20px);
   height: 50%;
   background-color: #fff;
+  opacity: 0.7;
  }
  &::before {
   top: 0;
@@ -310,6 +321,66 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
  }
 }
 
+.informative-cta {
+ position: relative;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ padding: 24px 28px;
+ background-color: #ebebeb;
+}
+
+.informative-cta__title-wrapper {
+ display: inline-flex;
+ flex-direction: column;
+ align-items: flex-start;
+ min-width: 210px;
+ margin-right: 20px;
+ margin-bottom: 20px;
+ .h2 {
+  font-weight: 700;
+ }
+ p {
+  font-size: 23px;
+  font-weight: 300;
+  color: $text-gray;
+ }
+}
+
+.informative-cta__content-wrapper {
+ width: 100%;
+ margin-right: 20px;
+ p {
+  color: $text-gray;
+ }
+}
+
+.informative-cta__dismiss-button {
+ position: absolute;
+ top: 32px;
+ right: 32px;
+ width: 20px;
+ height: 20px;
+ cursor: pointer;
+ &::before, &::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: $text-black;
+  transform-origin: center;
+ }
+ &::before {
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+ }
+ &::after {
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+ }
+}
+
 @media screen and (min-width: 800px) {
  .main-hero {
   height: 100vh;
@@ -318,6 +389,18 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
   height: 100vh;
   left: -32px;
   transform: translateX(0%) translateY(-50%);
+ }
+ .informative-cta__content-wrapper {
+  flex: 3;
+ }
+ .informative-cta__title-wrapper {
+  flex: 1;
+  margin-bottom: 0;
+ }
+ .informative-cta__dismiss-button {
+  position: relative;
+  top: 0;
+  left: 0;
  }
 }
 

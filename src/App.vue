@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h2>Previous Rulings</h2>
   </div>
 </template>
 
