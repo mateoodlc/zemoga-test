@@ -8,20 +8,24 @@
         </span>
         <h2 class="vote-module__name">{{name}}</h2>
       </div>
-      <p class="vote-module__description">
+      <p v-if="!voted" class="vote-module__description">
         {{description}}
+      </p>
+      <p v-if="voted" class="vote-module__description">
+        Thank you for voting!
       </p>
       <div class="vote-module__content__footer">
         <form v-if="!voted" class="vote-module__form">
           <fieldset>
-            <label class="container container--like" for="like">
-              <input type="radio" name="popularity" id="like" value="liked" v-model="selectedVote">
+            <label class="container container--like" :for="'like'+$props.id">
+              <input type="radio" name="popularity" :id="'like'+$props.id" value="liked"
+              v-model="selectedVote">
               <img src="../../assets/img/like.svg" alt="">
               <span class="sr-only">Like</span>
               <span class="checkmark"></span>
             </label>
-            <label class="container container--dislike" for="dislike">
-              <input type="radio" name="popularity" id="dislike" value="disliked"
+            <label class="container container--dislike" :for="'dislike'+$props.id">
+              <input type="radio" name="popularity" :id="'dislike'+$props.id" value="disliked"
               v-model="selectedVote">
               <img src="../../assets/img/like.svg" alt="">
               <span class="sr-only">Dislike</span>
