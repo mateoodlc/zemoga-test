@@ -12,29 +12,30 @@
         {{description}}
       </p>
       <div class="vote-module__content__footer">
-        <form v-if="!voted">
+        <form v-if="!voted" class="vote-module__form">
           <fieldset>
-            <label class="container container--like">
-              <input type="radio" name="radio" value="liked" v-model="selectedVote">
+            <label class="container container--like" for="like">
+              <input type="radio" name="popularity" id="like" value="liked" v-model="selectedVote">
               <img src="../../assets/img/like.svg" alt="">
               <span class="sr-only">Like</span>
               <span class="checkmark"></span>
             </label>
-            <label class="container container--dislike">
-              <input type="radio" name="radio" value="disliked" v-model="selectedVote">
+            <label class="container container--dislike" for="dislike">
+              <input type="radio" name="popularity" id="dislike" value="disliked"
+              v-model="selectedVote">
               <img src="../../assets/img/like.svg" alt="">
               <span class="sr-only">Dislike</span>
               <span class="checkmark"></span>
             </label>
           </fieldset>
           <button
-          class="button"
+          class="button button__submit-vote"
           :class="{'button--disabled': selectedVote == ''}"
           @click.prevent="selectedVote !== '' ? updatePopularity() : ''">
             Vote Now
           </button>
         </form>
-        <button v-if="voted" class="button" @click="voteAgain">
+        <button v-if="voted" class="button button__vote-again" @click="voteAgain">
           Vote Again
         </button>
       </div>
@@ -44,10 +45,10 @@
       <span class="disliked" :style="{width: popularityComputed.dislikes + '%'}"></span>
       <div class="vote-module__measurement-like">
         <img src="../../assets/img/like.svg" alt="Like">
-        <p>{{Math.round(popularityComputed.likes)+'%'}}</p>
+        <p>{{popularityComputed.likes + '%'}}</p>
       </div>
       <div class="vote-module__measurement-dislike">
-        <p>{{Math.round(popularityComputed.dislikes)+'%'}}</p>
+        <p>{{popularityComputed.dislikes + '%'}}</p>
         <img src="../../assets/img/like.svg" alt="Like">
       </div>
     </div>
@@ -103,8 +104,8 @@ export default {
     popularityComputed() {
       const rate = this.localLikes + this.localDislikes;
       const popularityObj = {
-        likes: (this.localLikes * 100) / rate,
-        dislikes: (this.localDislikes * 100) / rate,
+        likes: Math.round((this.localLikes * 100) / rate),
+        dislikes: Math.round((this.localDislikes * 100) / rate),
       };
       return popularityObj;
     },

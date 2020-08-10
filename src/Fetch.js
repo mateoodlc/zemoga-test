@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 /// Class for every fetch process
 import FirebaseConfig from './FirebaseConfig';
 
