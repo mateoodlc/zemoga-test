@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>Vote for your favorite leader</title>
   </head>
   <body>
     <main class="max-bound">
       <header class="site-header outer-pad">
+        <div class="site-header__button">
+          <span></span>
+        </div>
         <div class="site-logo">Rule of Thumb.</div>
         <nav class="nav-container">
           <ul class="nav-list__wrapper">
@@ -32,23 +38,41 @@
       <section class="component-spacer">
         <div class="outer-pad">
           <div class="main-hero">
-            <img class="main-hero__background-image" src="./assets/img/hero_background.jpg" alt="">
+            <img
+              class="main-hero__background-image"
+              src="./assets/img/hero_background.jpg"
+              alt=""
+            />
             <div class="main-hero__cta-wrapper">
               <div class="main-hero__cta">
-                <div class="main-hero__image-effect" style="background-image: url('./assets/img/hero_background.jpg')"></div>
+                <div
+                  class="main-hero__image-effect"
+                  style="background-image: url('./assets/img/hero_background.jpg')"
+                ></div>
                 <div class="main-hero__cta-content">
-                  <h1><p class="p--small">What's your opinion on</p>Pope Francis?</h1>
-                  <p>He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up) </p>
-                  <a href="http://" class="main-hero__cta-link p--small">More Information</a>
+                  <h1>
+                    <p class="p--small">What's your opinion on</p>
+                    Pope Francis?
+                  </h1>
+                  <p>
+                    He’s talking tough on clergy sexual abuse, but is he just
+                    another papal pervert protector? (thumbs down) or a true
+                    pedophile punishing pontiff? (thumbs up)
+                  </p>
+                  <a href="http://" class="main-hero__cta-link p--small"
+                    >More Information</a
+                  >
                   <p><strong>What's your veredict?</strong></p>
                 </div>
               </div>
               <div class="main-hero__bottom-actions">
                 <button class="main-hero__cta-button">
-                  <img src="./assets/img/like.svg" alt="Like">
+                  <img src="./assets/img/like.svg" alt="Like" />
                 </button>
-                <button class="main-hero__cta-button main-hero__cta-button--dislike">
-                  <img src="./assets/img/like.svg" alt="Dislike">
+                <button
+                  class="main-hero__cta-button main-hero__cta-button--dislike"
+                >
+                  <img src="./assets/img/like.svg" alt="Dislike" />
                 </button>
               </div>
             </div>
@@ -70,7 +94,12 @@
             <div class="h2 heading--dark">Be counted</div>
           </div>
           <div class="informative-cta__content-wrapper">
-            <p>Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</p>
+            <p>
+              Rule of Thumb is a crowd sourced court of public opinion where
+              anyone and everyone can speak out and speak freely. It’s easy: You
+              share your opinion, we analyze and put the data in a public
+              report.
+            </p>
           </div>
           <button class="informative-cta__dismiss-button"></button>
         </div>

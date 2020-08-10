@@ -1,3 +1,8 @@
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 button {
   border: none;
   background-color: transparent;
@@ -33,3 +38,4 @@ button.button.button--disabled {
   white-space: nowrap;
   border: 0;
 }
+
