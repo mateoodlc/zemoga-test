@@ -39,6 +39,17 @@ header.site-header {
   display: block;
   width: 32px;
   height: 32px;
+  cursor: pointer;
+    z-index: 99999;
+  &:hover,
+  &:focus {
+    &::before {
+      transform: translateY(2px);
+    }
+    &::after {
+      transform: translateY(-2px);
+    }
+  }
   span {
     display: block;
     position: absolute;
@@ -58,14 +69,34 @@ header.site-header {
     width: 100%;
     height: 3px;
     background-color: #fff;
-  }
-  &::before {
-    top: 5px;
-  }
-  &::after {
-    bottom: 5px;
-  }
+    transform: translateY(0);
+    transition: transform 0.3s;
 }
+&::before {
+    top: 5px;
+}
+&::after {
+    bottom: 5px;
+}
+}
+
+.site-header__button.site-header__button--active {
+    span {
+        opacity: 0;
+    }
+    &::before {
+        top: 50%;
+        left: 50%;
+        transform-origin: left;
+        transform: rotate(45deg) translateX(-50%) translateY(-50%);
+    }
+    &::after {
+        top: 50%;
+        left: 50%;
+        transform-origin: left;
+        transform: rotate(-45deg) translateX(-50%) translateY(-50%);
+    }
+}   
 
 nav.nav-container {
   position: absolute;
@@ -270,8 +301,11 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
     position: relative;
     width: 50%;
     height: 100%;
+    cursor: pointer;
     img {
       position: relative;
+      transform: scale(1);
+      transition: transform 0.3s;
     }
     &::before {
       content: "";
@@ -284,10 +318,22 @@ nav.nav-container .nav-list__wrapper .nav-list__item {
       background-color: #1cbbb4;
       opacity: 0.9;
     }
+    &:hover,
+    &:focus {
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
   .main-hero__cta-button.main-hero__cta-button--dislike {
     &::before {
       background-color: #ffad1d;
+    }
+    &:hover,
+    &:focus {
+      img {
+        transform: rotate(180deg) scale(1.1);
+      }
     }
     img {
       transform: rotate(180deg);
@@ -569,11 +615,17 @@ footer.footer {
   }
 }
 
-.footer__social__item {
+a.footer__social__item {
   position: relative;
   display: inline-block;
   width: 32px;
   height: 32px;
+  transform: scale(1);
+  transition: transform 0.3s !important;
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
 }
 
 .footer__social__item img {
