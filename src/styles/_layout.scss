@@ -1,44 +1,41 @@
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .max-bound {
- position: relative;
- width: 100vw;
- margin: 0 auto;
- background-color: white;
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  background-color: white;
 }
 
 .outer-pad {
- padding: 0 16px;
+  padding: 0 16px;
 }
 
 .component-spacer {
- margin-bottom: 32px;
- &:last-of-type {
-  margin-bottom: 0;
- }
+  margin-bottom: 32px;
 }
 
 @media screen and (min-width: 410px) {
- .outer-pad {
-  padding: 0 24px;
- }
+  .outer-pad {
+    padding: 0 24px;
+  }
 }
 
 @media screen and (min-width: 800px) {
- .outer-pad {
-  padding: 0 32px;
- }
+  .outer-pad {
+    padding: 0 32px;
+  }
 }
 
 @media screen and (min-width: 1100px) {
- .max-bound {
-  max-width: 1025px;
- }
- .outer-pad {
-  padding: 0 0;
- }
+  .max-bound {
+    max-width: 1025px;
+  }
+  .outer-pad {
+    padding: 0 0;
+  }
 }

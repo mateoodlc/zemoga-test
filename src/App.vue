@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="max-bound outer-pad">
-      <section class="vote-section">
+      <section class="vote-section component-spacer">
         <h2 class="heading--dark">Previous Rulings</h2>
         <div class="vote-section__container">
           <div class="vote-module__wrapper"
