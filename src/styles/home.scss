@@ -709,6 +709,11 @@ a.footer__social__item {
       font-weight: 300;
     }
   }
+  .nav-list__item {
+    a {
+      display: block;
+    }
+  }
   .site-logo {
     font-size: 35px;
   }

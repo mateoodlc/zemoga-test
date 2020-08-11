@@ -181,43 +181,74 @@ h2.vote-module__name {
   }
 }
 
-/* Hide the browser's default radio button */
-.container input {
+.wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+  }
+  &.wrapper--dislike {
+    img {
+      transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    }
+  }
+}
+
+/*style label to give some more space*/
+.wrapper label {
+  display: block;
+  pointer-events: none;
+}
+
+/*style and hide original checkbox*/
+.wrapper input {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
   opacity: 0;
   cursor: pointer;
 }
 
-/* Create a custom radio button */
-.checkmark {
+/*position new box*/
+.wrapper input + label::before {
+  background-color: $blue;
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  transition: box-shadow .3s;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover,
-.container:focus {
-  input ~ .checkmark {
-    background-color: transparent;
-    border: 2px solid transparent;
-  }
+.wrapper.wrapper--dislike input + label::before {
+  background-color: $orange;
 }
 
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: transparent;
-  border: 2px solid #fff;
+.wrapper input:checked + label::before {
+  box-shadow: 0 0 0 2px #fff;
+  outline: 3px solid transparent; /* For Windows high contrast mode. */
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark::after {
-  content: "";
-  position: absolute;
-  display: none;
+/*focus styles*/
+.wrapper input:hover + label::before, .wrapper input:focus + label::before {
+  box-shadow: 0 0 0 2px #fff;
+  outline: 3px solid transparent; /* For Windows high contrast mode. */
 }
 
 @media screen and (min-width: 800px) {

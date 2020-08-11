@@ -17,29 +17,36 @@
       <div class="vote-module__content__footer">
         <form v-if="!voted" class="vote-module__form">
           <fieldset>
-            <label class="container container--like" :for="'like'+$props.id">
-              <input type="radio" name="popularity" :id="'like'+$props.id" value="liked"
+            <div class="wrapper wrapper--like">
+              <input
+              :id="'like'+$props.id"
+              name="popularity"
+              type="radio"
+              value="liked"
               v-model="selectedVote">
+              <label :for="'like'+$props.id"><span class="sr-only">Like</span></label>
               <img src="../../assets/img/like.svg" alt="">
-              <span class="sr-only">Like</span>
-              <span class="checkmark"></span>
-            </label>
-            <label class="container container--dislike" :for="'dislike'+$props.id">
-              <input type="radio" name="popularity" :id="'dislike'+$props.id" value="disliked"
-              v-model="selectedVote">
+            </div>
+            <div class="wrapper wrapper--dislike">
+              <input
+              :id="'dislike'+$props.id"
+              name="popularity"
+              type="radio"
+              value="disliked" v-model="selectedVote">
+              <label :for="'dislike'+$props.id"><span class="sr-only">Like</span></label>
               <img src="../../assets/img/like.svg" alt="">
-              <span class="sr-only">Dislike</span>
-              <span class="checkmark"></span>
-            </label>
+            </div>
           </fieldset>
           <button
           class="button button__submit-vote"
           :class="{'button--disabled': selectedVote == ''}"
+          :tabindex="selectedVote == '' ? -1 : 0"
           @click.prevent="selectedVote !== '' ? updatePopularity() : ''">
             Vote Now
           </button>
         </form>
-        <button v-if="voted" class="button button__vote-again" @click="voteAgain">
+        <button v-if="voted" class="button button__vote-again"
+        @click="voteAgain" ref="voteAgainRef">
           Vote Again
         </button>
       </div>
@@ -67,7 +74,7 @@ export default {
       voted: false,
       localLikes: this.$props.likes,
       localDislikes: this.$props.dislikes,
-      selectedVote: String,
+      selectedVote: '',
     };
   },
   props: {
@@ -98,6 +105,10 @@ export default {
         imgSrc: this.$props.imgSrc,
       };
       this.$parent.updateVotes(votesParams);
+      setTimeout(() => {
+        this.$refs.voteAgainRef.focus();
+        console.log(this.$refs.voteAgainRef);
+      }, 100);
     },
     voteAgain() {
       this.voted = false;
