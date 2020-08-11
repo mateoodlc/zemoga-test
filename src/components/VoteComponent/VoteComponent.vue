@@ -108,8 +108,8 @@ export default {
     popularityComputed() {
       const rate = this.localLikes + this.localDislikes;
       const popularityObj = {
-        likes: Math.round((this.localLikes * 100) / rate),
-        dislikes: Math.round((this.localDislikes * 100) / rate),
+        likes: ((this.localLikes * 100) / rate).toFixed(1),
+        dislikes: ((this.localDislikes * 100) / rate).toFixed(1),
       };
       return popularityObj;
     },
