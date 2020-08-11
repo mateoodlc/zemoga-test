@@ -8,10 +8,11 @@ new Vue({
   render: (h) => h(App),
 }).$mount('#app');
 
+const headerElement = document.querySelector('.site-header');
 const menuElement = document.querySelector('.nav-container');
 const menuButton = document.querySelector('.site-header__button');
 const menuList = document.querySelector('.nav-list__wrapper');
-if (menuElement && menuButton && menuList) {
+if (headerElement && menuElement && menuButton && menuList) {
   // eslint-disable-next-line no-new
-  new Menu(menuElement, menuButton, menuList);
+  new Menu(headerElement, menuElement, menuButton, menuList);
 }
