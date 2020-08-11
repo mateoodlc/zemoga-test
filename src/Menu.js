@@ -45,7 +45,6 @@ export default class Menu {
         }
       }
     }
-    console.log(nodes);
     this.nodes = nodes;
     return nodes;
   }

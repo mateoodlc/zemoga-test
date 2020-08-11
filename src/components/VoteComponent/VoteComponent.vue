@@ -107,7 +107,6 @@ export default {
       this.$parent.updateVotes(votesParams);
       setTimeout(() => {
         this.$refs.voteAgainRef.focus();
-        console.log(this.$refs.voteAgainRef);
       }, 100);
     },
     voteAgain() {
