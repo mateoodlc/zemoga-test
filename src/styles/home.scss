@@ -44,14 +44,14 @@ header.site-header {
   z-index: 99999;
   &:hover,
   &:focus {
-    span::before {
+    span.hamburger-icon::before {
       transform: translateY(-8px);
     }
-    span::after {
+    span.hamburger-icon::after {
       transform: translateY(8px);
     }
   }
-  span {
+  span.hamburger-icon {
     display: block;
     position: absolute;
     top: 50%;
@@ -62,8 +62,8 @@ header.site-header {
     background-color: #fff;
     transition: background-color 0.3s;
   }
-  span::before,
-  span::after {
+  span.hamburger-icon::before,
+  span.hamburger-icon::after {
     content: "";
     display: block;
     position: absolute;
@@ -74,22 +74,22 @@ header.site-header {
     background-color: #fff;
     transition: transform 0.3s;
   }
-  span::before {
+  span.hamburger-icon::before {
     transform: translateY(-12px);
   }
-  span::after {
+  span.hamburger-icon::after {
     transform: translateY(12px);
   }
 }
 
 .site-header__button.site-header__button--active {
-  span {
+  span.hamburger-icon {
     background-color: $blue;
   }
-  span::before {
+  span.hamburger-icon::before {
     transform: rotate(-45deg);
   }
-  span::after {
+  span.hamburger-icon::after {
     transform: rotate(45deg);
   }
 }
@@ -281,7 +281,7 @@ nav.nav-container {
     font-size: 21px;
   }
   a {
-    display: block;
+    display: inline-block;
     margin-top: 20px;
   }
   p {

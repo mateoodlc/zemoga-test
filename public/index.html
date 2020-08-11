@@ -14,12 +14,13 @@
   <body>
     <main class="max-bound">
       <header class="site-header outer-pad">
-        <button class="site-header__button">
-          <span></span>
+        <button class="site-header__button" aria-controls="menu">
+          <span class="hamburger-icon"></span>
+          <span class="sr-only">Menu</span>
         </button>
         <div class="site-logo">Rule of Thumb.</div>
         <nav class="nav-container">
-          <ul class="nav-list__wrapper">
+          <ul class="nav-list__wrapper" id="menu">
             <li class="nav-list__item">
               <a href="https://zemoga-server.web.app/post_trials"
                 >Post Trials</a

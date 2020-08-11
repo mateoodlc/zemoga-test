@@ -10,7 +10,8 @@ new Vue({
 
 const menuElement = document.querySelector('.nav-container');
 const menuButton = document.querySelector('.site-header__button');
-if (menuElement && menuButton) {
+const menuList = document.querySelector('.nav-list__wrapper');
+if (menuElement && menuButton && menuList) {
   // eslint-disable-next-line no-new
-  new Menu(menuElement, menuButton);
+  new Menu(menuElement, menuButton, menuList);
 }
