@@ -8,6 +8,7 @@
             v-for="(vote, index) of votesData"
             :index="index" :key="vote.id">
           <vote-component
+            :voteIndex="index"
             :id="vote.id"
             :name="vote.name"
             :description="vote.description"

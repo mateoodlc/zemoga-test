@@ -3,7 +3,8 @@
     <div class="vote-module__content">
       <div class="vote-popularity__wrapper">
         <span class="popularity-indicator"
-        :class="{'disliked': popularityComputed.likes < popularityComputed.dislikes}">
+        :class="{'disliked': popularityComputed.likes < popularityComputed.dislikes}"
+        v-if="localLikes && localDislikes > 0">
           <img src="../../assets/img/like.svg" alt="">
         </span>
         <h2 class="vote-module__name">{{name}}</h2>
@@ -32,7 +33,9 @@
               :id="'dislike'+$props.id"
               name="popularity"
               type="radio"
-              value="disliked" v-model="selectedVote">
+              value="disliked"
+              v-model="selectedVote"
+              checked>
               <label :for="'dislike'+$props.id"><span class="sr-only">Like</span></label>
               <img src="../../assets/img/like.svg" alt="">
             </div>
@@ -84,6 +87,7 @@ export default {
     likes: Number,
     dislikes: Number,
     imgSrc: String,
+    voteIndex: Number,
   },
   mounted() {
   },
@@ -121,6 +125,11 @@ export default {
         likes: ((this.localLikes * 100) / rate).toFixed(1),
         dislikes: ((this.localDislikes * 100) / rate).toFixed(1),
       };
+      if (this.localLikes === 0 && this.localDislikes === 0) {
+        popularityObj.likes = 50;
+        popularityObj.dislikes = 50;
+        return popularityObj;
+      }
       return popularityObj;
     },
   },
