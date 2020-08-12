@@ -34,8 +34,7 @@
               name="popularity"
               type="radio"
               value="disliked"
-              v-model="selectedVote"
-              checked>
+              v-model="selectedVote">
               <label :for="'dislike'+$props.id"><span class="sr-only">Like</span></label>
               <img src="../../assets/img/like.svg" alt="">
             </div>
@@ -77,7 +76,7 @@ export default {
       voted: false,
       localLikes: this.$props.likes,
       localDislikes: this.$props.dislikes,
-      selectedVote: '',
+      selectedVote: this.$props.voteIndex === 0 ? 'liked' : '',
     };
   },
   props: {
